@@ -14,7 +14,7 @@
                 
                 <a href="servicos/ver/<?= $id ?>" class="btn btn-secondary">Ver Fornecedor</a>
                 <a href="fornecedores/editar/<?= $id ?>" class="btn btn-primary">Editar</a>
-                <a href="fornecedores/apagar/<?= $id ?>" class="btn btn-danger">Excluir</a>
+                <a href="fornecedores/apagar/<?= $id ?>" class="btn btn-danger" onclick="return confirm('Deseja excluir este curso?')">Excluir</a>
             </div>
         </div>
         

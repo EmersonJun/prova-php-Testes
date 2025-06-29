@@ -14,11 +14,12 @@
         <ul>
             <?php 
                 if(isset($_SESSION['user_id'])){
+                    echo '<li>ta logado meu pia</li>';
                     echo '<li><a href="fornecedores">Fornecedores</a></li>';
                     echo '<li><a href="logout">Logout</a></li>';
                     echo '<li><a href="apagar-usuario">Deletar</a></li>';
                 }else{
-                    echo 'Fazer Login...';
+                    echo 'Faca seu login meu pia';
                 }
             ?>
         </ul>
