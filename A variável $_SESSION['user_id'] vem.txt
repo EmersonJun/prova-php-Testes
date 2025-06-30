@@ -1,0 +1,27 @@
+A variável $_SESSION['user_id'] vem do processo de login do usuário, mais especificamente da função Usuario::authenticate() localizada no arquivo models/usuário.
+
+Veja esse trecho de código:
+
+php
+Copiar
+Editar
+if(password_verify($password, $obj_usuario_resposta->senha)){
+    $_SESSION['user_id'] = $obj_usuario_resposta->id;
+    $_SESSION['user'] = $obj_usuario_resposta->nome_usuario;
+    return true;
+}
+Esse código é executado quando o usuário faz login corretamente. O que ele faz:
+
+Verifica se o nome de usuário e senha batem com algum registro na tabela usuarios.
+
+Se estiver tudo certo, ele define $_SESSION['user_id'] com o id do usuário autenticado (vindo do banco de dados).
+
+Esse user_id será então usado para verificar se o usuário está logado nas outras páginas, com:
+
+php
+Copiar
+Editar
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login');
+}
+Portanto, a variável $_SESSION['user_id'] é definida no momento do login bem-sucedido e é usada como um identificador para verificar se o usuário está autenticado.
